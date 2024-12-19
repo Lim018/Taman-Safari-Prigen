@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\QrScannerController;
 use App\Http\Controllers\TicketController;
@@ -22,6 +23,7 @@ use App\Models\PurchasedTicket;
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/jadwal', [PagesController::class, 'jadwal']);
+Route::get('/posts', [PagesController::class, 'posts']);
 
 //auth
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
@@ -47,6 +49,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/roles/{id}/edit', [ManagementController::class, 'editRole'])->name('management.roles.edit');
     Route::post('/roles/{id}/update', [ManagementController::class, 'updateRole'])->name('management.roles.update');
     Route::delete('/roles/{id}', [ManagementController::class, 'deleteRole'])->name('management.roles.delete');
+
+    // Testimoni Routes
+    Route::get('/posts/create', [PostsController::class, 'create'])->name('posts.create');
+    Route::post('/posts/store', [PostsController::class, 'store'])->name('posts.store');
 
     // Menus routes
     Route::get('/menus', [ManagementController::class, 'indexMenu'])->name('management.menus.index');

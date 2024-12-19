@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jadwal;
+use App\Models\Post;
 
 class PagesController extends Controller
 {
@@ -20,5 +21,10 @@ class PagesController extends Controller
     {
         $jadwals = Jadwal::all();
         return view('pages.jadwal', compact('jadwals'));
+    }
+    public function posts()
+    {
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 }
