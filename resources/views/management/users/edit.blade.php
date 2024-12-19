@@ -29,13 +29,6 @@
               </div>
               <div class="mb-4 row align-items-center">
                 <label for="exampleInputText2"
-                  class="form-label fw-semibold col-sm-3 col-form-label">Username</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" name="username" value="{{ $user->USERNAME }}" required>
-                </div>
-              </div>
-              <div class="mb-4 row align-items-center">
-                <label for="exampleInputText2"
                   class="form-label fw-semibold col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
                     <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>

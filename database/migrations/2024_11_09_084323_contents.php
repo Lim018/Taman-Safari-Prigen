@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->increments('ID_KONTEN');
-            $table->string('PLACE');
             $table->string('TITLE');
-            $table->string('TITLE2');
-            $table->text('DESCRIPSION');
-            $table->string('IMAGE');
+            $table->text('DESCRIPSION')->nullable();
+            $table->integer('HARGA_ADULT')->nullable();
+            $table->integer('HARGA_CHILD')->nullable();
+            $table->string('IMAGE')->nullable();
             $table->timestamps();
         });
     }
